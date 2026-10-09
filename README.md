@@ -18,7 +18,7 @@ npm run preview
 
 | Item | Where |
 | --- | --- |
-| Production domain (canonical URLs, sitemap, robots, Open Graph) | `VITE_SITE_URL` in `.env` (default `https://www.ssitsolution.com`) |
+| Production domain (canonical URLs, sitemap, robots, Open Graph) | `VITE_SITE_URL` in `.env` (default `https://ssitsolution.in`) |
 | Testimonials (placeholders, replace with approved client feedback) | `src/data/company.ts` → `testimonials` |
 | Portfolio screenshots (currently styled placeholders) | `src/sections/Portfolio.tsx` → `ScreenshotPlaceholder` |
 

@@ -1,7 +1,7 @@
 // Company-wide constants. This file is shared by the app and vite.config.ts,
 // so it must stay free of browser- or Vite-specific APIs.
 
-export const DEFAULT_SITE_URL = 'https://www.ssitsolution.com';
+export const DEFAULT_SITE_URL = 'https://ssitsolution.in';
 
 export const company = {
   name: 'SS IT Solution',
