@@ -11,12 +11,12 @@ export function Technologies() {
         id="technologies-title"
         eyebrow="Technologies"
         title="A proven, enterprise-ready technology stack"
-        description="We select mature, well-supported technologies so the systems we deliver remain secure, performant and maintainable for years."
+        description="Mature, well-supported technologies we use so the systems we build stay secure, performant and maintainable for years."
       />
 
       <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {techCategories.map((cat, i) => (
-          <Reveal key={cat.id} delay={(i % 3) * 0.06} className="card flex flex-col p-7">
+          <Reveal key={cat.id} delay={(i % 3) * 0.08} variant="scale" className="card flex flex-col p-7">
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="text-lg font-semibold text-white">{cat.title}</h3>
               <span className="text-xs text-slate-400 tabular-nums">

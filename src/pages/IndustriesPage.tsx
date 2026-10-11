@@ -10,8 +10,8 @@ export default function IndustriesPage() {
       <Seo path="/industries" jsonLd={[breadcrumb('Industries', '/industries')]} />
       <PageHeader
         eyebrow="Industries"
-        title="Technology solutions tailored to your sector"
-        description="We serve manufacturers, industrial operators, public-sector bodies, institutions and growing businesses in India and internationally."
+        title="Sector experience across domains"
+        description="Experience spanning manufacturers, industrial operators, public-sector bodies, institutions and growing businesses in India and internationally."
       />
       <Industries />
       <WhyChooseUs />

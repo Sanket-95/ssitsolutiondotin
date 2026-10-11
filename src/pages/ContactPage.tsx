@@ -8,8 +8,8 @@ export default function ContactPage() {
       <Seo path="/contact" jsonLd={[breadcrumb('Contact', '/contact')]} />
       <PageHeader
         eyebrow="Contact"
-        title="Let’s discuss your next project"
-        description="Email us your requirements and our team will respond with a recommended approach, timeline and next steps."
+        title="Let's connect"
+        description="For job opportunities, collaborations, or questions about anything in this portfolio — send a message and we'll get back to you."
       />
       <Contact />
     </>

@@ -5,6 +5,8 @@ interface RevealProps {
   className?: string;
   delay?: number;
   as?: 'div' | 'li' | 'article';
+  /** Entrance style: up (default), scale-in, slide from a side, or blur-to-focus. */
+  variant?: 'up' | 'scale' | 'left' | 'right' | 'blur';
 }
 
 // One observer shared by every Reveal keeps scroll work and hydration cost low.
@@ -27,8 +29,8 @@ function getObserver() {
   return observer;
 }
 
-/** Fades content up once when it scrolls into view (CSS-driven; see .reveal in index.css). */
-export function Reveal({ children, className = '', delay = 0, as: Tag = 'div' }: RevealProps) {
+/** Animates content in once when it scrolls into view (CSS-driven; see .reveal in index.css). */
+export function Reveal({ children, className = '', delay = 0, as: Tag = 'div', variant = 'up' }: RevealProps) {
   // Intersection type satisfies the ref prop of every supported tag.
   const ref = useRef<HTMLDivElement & HTMLLIElement>(null);
 
@@ -47,7 +49,7 @@ export function Reveal({ children, className = '', delay = 0, as: Tag = 'div' }:
   const style = delay ? ({ '--reveal-delay': `${delay}s` } as CSSProperties) : undefined;
 
   return (
-    <Tag ref={ref} className={`reveal ${className}`} style={style}>
+    <Tag ref={ref} className={`reveal reveal-${variant} ${className}`} style={style}>
       {children}
     </Tag>
   );

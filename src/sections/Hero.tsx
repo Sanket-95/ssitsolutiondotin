@@ -3,21 +3,32 @@ import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { ButtonLink } from '@/components/ui/Button';
 import { BrandIcon } from '@/components/ui/BrandIcon';
+import { useParallax } from '@/hooks/useParallax';
 import { heroTechnologies } from '@/data/technologies';
 
 /** Stagger for the CSS entrance animation (.enter in index.css). */
 const enterDelay = (seconds: number) => ({ '--enter-delay': `${seconds}s` }) as CSSProperties;
 
+const parallaxStyle = { transform: 'translateY(var(--parallax-y, 0px))' } as CSSProperties;
+
 export function Hero() {
+  const gridRef = useParallax<HTMLDivElement>(0.12);
+  const glowRef = useParallax<HTMLDivElement>(0.26);
+
   return (
     <section aria-labelledby="hero-title" className="relative isolate flex min-h-svh items-center overflow-hidden pt-[72px]">
-      {/* Background: slowly panning grid with a single soft accent glow. */}
+      {/* Background: slowly panning grid with a single soft accent glow, each drifting at its own
+          rate on scroll (grid slowest/furthest, glow faster/nearest) for a subtle sense of depth. */}
       <div aria-hidden="true" className="absolute inset-0 -z-10">
-        <div className="mask-radial absolute inset-0 overflow-hidden">
+        <div ref={gridRef} style={parallaxStyle} className="mask-radial absolute inset-0 overflow-hidden">
           {/* Oversized by one tile and moved with transform, so the pan is composited, not repainted. */}
           <div className="bg-grid absolute -inset-16 animate-grid-pan will-change-transform" />
         </div>
-        <div className="absolute inset-x-0 top-0 h-[720px] bg-[radial-gradient(ellipse_50%_45%_at_50%_15%,rgb(37_99_235/0.16),transparent)]" />
+        <div
+          ref={glowRef}
+          style={parallaxStyle}
+          className="absolute inset-x-0 top-0 h-[720px] bg-[radial-gradient(ellipse_50%_45%_at_50%_15%,rgb(37_99_235/0.16),transparent)]"
+        />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink" />
       </div>
 
@@ -38,8 +49,8 @@ export function Hero() {
           </h1>
 
           <p className="enter-move mt-7 max-w-2xl text-base leading-relaxed text-pretty text-muted sm:text-lg">
-            We design and deliver scalable software platforms, cloud infrastructure, mobile applications, automation
-            systems, AI integrations and business solutions for organizations worldwide.
+            We design and build scalable software platforms, cloud infrastructure, mobile applications, automation
+            systems and AI integrations — a working portfolio of our engineering experience.
           </p>
 
           <div style={enterDelay(0.2)} className="enter mt-10 flex flex-col gap-3 sm:flex-row">

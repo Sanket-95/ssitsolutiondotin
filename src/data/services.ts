@@ -84,7 +84,7 @@ export const services: Service[] = [
       'Design, tuning and migration of relational and document databases for consistent performance and data integrity.',
     icon: Database,
     capabilities: [
-      'MySQL',
+      'FastAPI',
       'Oracle',
       'PostgreSQL',
       'MongoDB',

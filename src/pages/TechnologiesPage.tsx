@@ -11,7 +11,7 @@ export default function TechnologiesPage() {
       <PageHeader
         eyebrow="Technologies"
         title="Mature technologies, engineered for longevity"
-        description="Our teams work across modern frontend frameworks, backend runtimes, enterprise databases, container platforms and observability tooling."
+        description="Hands-on experience across modern frontend frameworks, backend runtimes, enterprise databases, container platforms and observability tooling."
       />
       <Technologies />
       <WhyChooseUs />

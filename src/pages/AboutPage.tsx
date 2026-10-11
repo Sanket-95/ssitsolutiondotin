@@ -11,8 +11,8 @@ export default function AboutPage() {
       <Seo path="/about" jsonLd={[breadcrumb('About', '/about')]} />
       <PageHeader
         eyebrow="About"
-        title="A technology partner focused on reliable outcomes"
-        description="We combine software engineering, cloud infrastructure and industrial automation expertise to help organizations operate more efficiently."
+        title="Engineering expertise focused on reliable outcomes"
+        description="Combining software engineering, cloud infrastructure and industrial automation expertise built through real-world projects."
       />
       <About />
       <WhyChooseUs />

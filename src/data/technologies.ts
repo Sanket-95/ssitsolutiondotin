@@ -19,7 +19,7 @@ export const techCategories: TechCategory[] = [
     description: 'Modern, accessible interfaces for web and mobile.',
     items: [
       { name: 'React', icon: 'react' },
-      { name: 'TypeScript', icon: 'typescript' },
+      { name: 'Three.js', icon: 'threejs' },
       { name: 'JavaScript', icon: 'javascript' },
       { name: 'Tailwind CSS', icon: 'tailwindcss' },
       { name: 'Vite', icon: 'vite' },
@@ -73,7 +73,10 @@ export const techCategories: TechCategory[] = [
     id: 'analytics',
     title: 'Analytics',
     description: 'Monitoring, dashboards and reporting.',
-    items: [{ name: 'Grafana', icon: 'grafana' }],
+    items: [
+      { name: 'Grafana', icon: 'grafana' },
+      { name: 'Oracle APEX', icon: 'apex' },
+    ],
   },
 ];
 
@@ -84,7 +87,7 @@ export const heroTechnologies: Technology[] = [
   { name: 'Docker', icon: 'docker' },
   { name: 'Kubernetes', icon: 'kubernetes' },
   { name: 'Oracle', icon: 'oracle' },
-  { name: 'MySQL', icon: 'mysql' },
+  { name: 'FastAPI', icon: 'fastapi' },
   { name: 'MongoDB', icon: 'mongodb' },
   { name: 'PostgreSQL', icon: 'postgresql' },
   { name: 'Grafana', icon: 'grafana' },

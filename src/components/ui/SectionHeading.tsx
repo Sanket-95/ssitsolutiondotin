@@ -15,7 +15,7 @@ export function SectionHeading({ id, eyebrow, title, description, align = 'left'
   const Heading = level;
   const alignClass = align === 'center' ? 'mx-auto text-center items-center' : '';
   return (
-    <Reveal className={`flex max-w-3xl flex-col ${alignClass}`}>
+    <Reveal variant="blur" className={`flex max-w-3xl flex-col ${alignClass}`}>
       <p className="eyebrow">
         <span aria-hidden="true" className="h-px w-6 bg-accent-soft/70" />
         {eyebrow}

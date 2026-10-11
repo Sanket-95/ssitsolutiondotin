@@ -29,8 +29,8 @@ export function Footer() {
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">{company.tagline}</p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-              Technology consulting and software development for enterprises, industry, the public sector and growing
-              businesses worldwide.
+              A portfolio of software engineering work across enterprise software, cloud infrastructure, industrial
+              automation and mobile applications.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export function Footer() {
 
           <nav aria-labelledby="footer-services" className="lg:col-span-3">
             <h2 id="footer-services" className="text-sm font-semibold text-white">
-              Services
+              Skills
             </h2>
             <ul className="mt-4 space-y-3">
               {services.slice(0, 6).map((s) => (
@@ -89,7 +89,7 @@ export function Footer() {
           <p>
             © {year} {company.legalName}. All rights reserved.
           </p>
-          <p>Enterprise Software • Cloud Infrastructure • Automation Solutions</p>
+          <p>Enterprise Software • Cloud Infrastructure • Automation Skills</p>
         </div>
       </Container>
     </footer>

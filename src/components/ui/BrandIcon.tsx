@@ -19,6 +19,7 @@ const visibleOnDark: Partial<Record<BrandKey, string>> = {
   sqlserver: '#E0484A',
   nodejs: '#6CC24A',
   vite: '#A78BFA',
+  threejs: '#F5F5F5',
 };
 
 export function BrandIcon({ name, size = 28, tone = 'brand', className }: BrandIconProps) {

@@ -5,9 +5,9 @@ import { Reveal } from '@/components/ui/Reveal';
 import { company } from '@/config/site';
 
 const nextSteps = [
-  'We review your requirements and objectives.',
-  'Our team arranges a discovery discussion.',
-  'You receive a recommended approach, timeline and estimate.',
+  'We review every message carefully.',
+  'We find a time to talk about what you need.',
+  "We'll let you know honestly whether it's a good fit.",
 ];
 
 export function Contact() {
@@ -19,7 +19,7 @@ export function Contact() {
             id="contact-title"
             eyebrow="Contact"
             title="Get in Touch"
-            description="Tell us about your project by email. Our team reviews every enquiry and responds during business hours."
+            description="Whether you're a recruiter, a past collaborator, or came across a project here you'd like to discuss, send a message."
           />
 
           <Reveal delay={0.1} className="mt-10">
@@ -62,7 +62,7 @@ export function Contact() {
                 <Clock size={21} aria-hidden="true" />
               </span>
               <span>
-                <span className="block text-xs font-semibold tracking-widest text-slate-400 uppercase">Business Hours</span>
+                <span className="block text-xs font-semibold tracking-widest text-slate-400 uppercase">Typical Availability</span>
                 <span className="mt-1.5 block text-lg font-medium text-white sm:text-xl">{company.hours.days}</span>
                 <span className="block text-muted">{company.hours.time}</span>
               </span>

@@ -6,7 +6,7 @@ export const DEFAULT_SITE_URL = 'https://ssitsolution.in';
 export const company = {
   name: 'SS IT Solution',
   legalName: 'SS IT Solution',
-  tagline: 'Enterprise Software • Cloud Infrastructure • Automation Solutions',
+  tagline: 'Enterprise Software • Cloud Infrastructure • Automation Skills',
   email: 'ssitsolutionindia@gmail.com',
   hours: {
     days: 'Monday - Saturday',

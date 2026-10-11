@@ -10,13 +10,13 @@ export function Portfolio() {
       <SectionHeading
         id="portfolio-title"
         eyebrow="Portfolio"
-        title="Selected work delivered for our clients"
+        title="Selected work"
         description="Platforms built for public-sector, international and community organizations — engineered for availability, performance and ease of management."
       />
 
       <ul className="mt-14 grid gap-6 lg:grid-cols-3">
         {projects.map((p, i) => (
-          <Reveal as="li" key={p.id} delay={i * 0.08} className="h-full">
+          <Reveal as="li" key={p.id} delay={i * 0.1} variant="scale" className="h-full">
             <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel/70 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-accent/40">
               <ScreenshotPlaceholder project={p} />
               <div className="flex flex-1 flex-col p-7">

@@ -9,14 +9,14 @@ export function Services() {
     <Section id="services" labelledBy="services-title" tone="raised">
       <SectionHeading
         id="services-title"
-        eyebrow="Services"
-        title="End-to-end capabilities for modern organizations"
-        description="From business applications and cloud platforms to plant-floor automation, our teams design, build and support systems that run critical operations."
+        eyebrow="Skills"
+        title="Capabilities built across real projects"
+        description="From business applications and cloud platforms to plant-floor automation — skills developed and applied across the systems in this portfolio."
       />
 
       <ul className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {services.map((s, i) => (
-          <Reveal as="li" key={s.id} delay={(i % 3) * 0.06} className="h-full">
+          <Reveal as="li" key={s.id} delay={(i % 3) * 0.08} variant="scale" className="h-full">
             <article
               id={s.id}
               className="group relative flex h-full scroll-mt-28 flex-col rounded-2xl border border-line bg-panel/70 p-7 transition-[border-color,transform,background-color] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-panel"
