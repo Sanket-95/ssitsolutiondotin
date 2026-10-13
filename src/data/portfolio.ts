@@ -1,3 +1,11 @@
+import maharashtraPreview from '@/assets/previews/maharashtra.jpg';
+import uaePreview from '@/assets/previews/uae.jpg';
+import pujariPreview from '@/assets/previews/pujari.jpg';
+import scadaPreview from '@/assets/previews/scada.jpg';
+import chatbotPreview from '@/assets/previews/chatbot.jpg';
+import shopPreview from '@/assets/previews/shop.jpg';
+import cafePreview from '@/assets/previews/cafe.jpg';
+
 export interface Project {
   id: string;
   title: string;
@@ -5,8 +13,8 @@ export interface Project {
   category: string;
   summary: string;
   highlights: string[];
-  /** Visual theme for the screenshot placeholder. */
-  layout: 'news' | 'corporate' | 'portal';
+  /** Screenshot of the live site (16:10). */
+  image: string;
 }
 
 export const projects: Project[] = [
@@ -18,7 +26,7 @@ export const projects: Project[] = [
     summary:
       'A public-sector news and information portal built for dependable publishing workflows and consistent availability under traffic peaks.',
     highlights: ['Content Management', 'High Availability', 'Cloud Deployment'],
-    layout: 'news',
+    image: maharashtraPreview,
   },
   {
     id: 'uae-business-platform',
@@ -28,7 +36,7 @@ export const projects: Project[] = [
     summary:
       'A modern corporate presence for an international client, designed for clarity, speed and a premium brand experience on every device.',
     highlights: ['Modern UI', 'Responsive Design', 'Performance Optimization'],
-    layout: 'corporate',
+    image: uaePreview,
   },
   {
     id: 'pujari-online-platform',
@@ -38,7 +46,7 @@ export const projects: Project[] = [
     summary:
       'A custom community portal with role-based user management and cloud hosting, built to connect service providers with their communities.',
     highlights: ['Custom Portal', 'User Management', 'Cloud Hosting'],
-    layout: 'portal',
+    image: pujariPreview,
   },
 ];
 
@@ -48,10 +56,13 @@ export interface Demo {
   title: string;
   /** Site-relative path of the hosted demo; omitted while the demo is not published yet. */
   path?: string;
+  /** True for a page of this app (opened in place); otherwise a separate app opened in a new tab. */
+  internal?: boolean;
   category: string;
   summary: string;
   highlights: string[];
-  layout: 'scada' | 'chat';
+  /** Screenshot of the demo (16:9). */
+  image: string;
 }
 
 export const demos: Demo[] = [
@@ -63,16 +74,40 @@ export const demos: Demo[] = [
     summary:
       'A browser-based SCADA for plant monitoring: live 2D and 3D mimics of a plating line and a dairy plant, alarms, and twelve production reports with CSV and PDF export. Runs on simulated data.',
     highlights: ['3D Visualization', 'Real-time Monitoring', 'Reports & Analytics'],
-    layout: 'scada',
+    image: scadaPreview,
   },
   {
     id: 'chat-bot',
-    title: 'AI Chat Bot',
-    category: 'Conversational AI · Coming soon',
+    title: 'Chat Bot',
+    path: '/chat-bot',
+    internal: true,
+    category: 'Customer Engagement · Live Demo',
     summary:
-      'A conversational assistant that answers customer questions from your own content and hands over to a person when it should.',
-    highlights: ['Natural Language', 'Knowledge Base', 'Website Integration'],
-    layout: 'chat',
+      'Two chat bots you can talk to: a WhatsApp bot that books clinic appointments and a custom website widget that qualifies real-estate leads.',
+    highlights: ['WhatsApp Bot', 'Website Chat Widget', 'Guided Conversations'],
+    image: chatbotPreview,
+  },
+  {
+    id: 'ecommerce-website',
+    title: 'E-commerce Website',
+    path: '/ecommerce-demo',
+    internal: true,
+    category: 'Online Retail · Live Demo',
+    summary:
+      'A single-page online store with search, category filters, wishlist, cart, coupon codes and a checkout flow. Runs on mock data.',
+    highlights: ['Product Catalogue', 'Cart & Checkout', 'Responsive Design'],
+    image: shopPreview,
+  },
+  {
+    id: 'mobile-app',
+    title: 'Mobile Application',
+    path: '/mobile-app-demo',
+    internal: true,
+    category: 'Mobile App · Live Demo',
+    summary:
+      'A café order-management app for staff: take table orders, move them through the kitchen and track the day’s sales on a dashboard.',
+    highlights: ['Order Management', 'Kitchen Tracking', 'Sales Dashboard'],
+    image: cafePreview,
   },
 ];
 

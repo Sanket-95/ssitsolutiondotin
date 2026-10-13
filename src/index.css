@@ -155,6 +155,55 @@
   }
 }
 
+@layer components {
+  /* Chat bot demos (/chat-bot). */
+  .chat-pop {
+    animation: chat-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes chat-pop {
+    from { opacity: 0; transform: translateY(6px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+  .typing-dot {
+    @apply h-2 w-2 rounded-full;
+    animation: typing-dot 1s ease-in-out infinite;
+  }
+  @keyframes typing-dot {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+  /* Slide-in panels for the e-commerce and café app demos. */
+  .drawer-in {
+    animation: drawer-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes drawer-in {
+    from { transform: translateX(100%); }
+    to { transform: none; }
+  }
+  .sheet-up {
+    animation: sheet-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes sheet-up {
+    from { transform: translateY(100%); }
+    to { transform: none; }
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* WhatsApp-like doodle wallpaper, drawn with gradients so it needs no image. */
+  .wa-wallpaper {
+    background-color: #efeae2;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgb(0 0 0 / 0.035) 2px, transparent 2.5px),
+      radial-gradient(circle at 70% 70%, rgb(0 0 0 / 0.035) 3px, transparent 3.5px),
+      radial-gradient(circle at 80% 20%, rgb(0 0 0 / 0.03) 1.5px, transparent 2px);
+    background-size: 46px 46px, 62px 62px, 34px 34px;
+  }
+}
+
 @layer base {
   /* Native select menus render options with OS colours; keep them legible on dark. */
   select option {

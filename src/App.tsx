@@ -10,6 +10,9 @@ const pageLoaders: Record<string, () => Promise<PageModule>> = {
   '/services': () => import('@/pages/ServicesPage'),
   '/technologies': () => import('@/pages/TechnologiesPage'),
   '/portfolio': () => import('@/pages/PortfolioPage'),
+  '/chat-bot': () => import('@/pages/ChatBotPage'),
+  '/ecommerce-demo': () => import('@/pages/EcommerceDemoPage'),
+  '/mobile-app-demo': () => import('@/pages/MobileAppDemoPage'),
   '/industries': () => import('@/pages/IndustriesPage'),
   '/about': () => import('@/pages/AboutPage'),
   '/contact': () => import('@/pages/ContactPage'),
@@ -42,7 +45,10 @@ export default function App() {
         <Route path="services" element={<Page path="/services" />} />
         <Route path="technologies" element={<Page path="/technologies" />} />
         <Route path="portfolio" element={<Page path="/portfolio" />} />
-        <Route path="industries" element={<Page path="/industries" />} />
+        <Route path="chat-bot" element={<Page path="/chat-bot" />} />
+        <Route path="ecommerce-demo" element={<Page path="/ecommerce-demo" />} />
+        <Route path="mobile-app-demo" element={<Page path="/mobile-app-demo" />} />
+        <Route path="industries"element={<Page path="/industries" />} />
         <Route path="about" element={<Page path="/about" />} />
         <Route path="contact" element={<Page path="/contact" />} />
         <Route path="*" element={<Page path="/404" />} />

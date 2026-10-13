@@ -4,9 +4,9 @@ import { Reveal } from '@/components/ui/Reveal';
 import { BrandIcon } from '@/components/ui/BrandIcon';
 import { techCategories } from '@/data/technologies';
 
-export function Technologies() {
+export function Technologies({ tone = 'default' }: { tone?: 'default' | 'raised' }) {
   return (
-    <Section id="technologies" labelledBy="technologies-title">
+    <Section id="technologies" labelledBy="technologies-title" tone={tone}>
       <SectionHeading
         id="technologies-title"
         eyebrow="Technologies"

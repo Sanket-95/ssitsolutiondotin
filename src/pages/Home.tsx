@@ -16,8 +16,9 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Technologies />
-      <Portfolio />
+      {/* Bands alternate default/raised down the page, so these two swap tones from their standalone pages. */}
+      <Portfolio tone="default" />
+      <Technologies tone="raised" />
       <Industries />
       <WhyChooseUs />
       <Process />

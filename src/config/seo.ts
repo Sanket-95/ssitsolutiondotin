@@ -45,6 +45,27 @@ export const routeMeta: RouteMeta[] = [
     priority: 0.8, changefreq: 'monthly',
   },
   {
+    path: '/chat-bot',
+    title: 'Chat Bot Demo | WhatsApp & Website Chat Bots | SS IT Solution',
+    description:
+      'Try two live chat bot demos: a WhatsApp bot that books clinic appointments and a custom website chat widget that qualifies real-estate leads.',
+    priority: 0.7, changefreq: 'monthly',
+  },
+  {
+    path: '/ecommerce-demo',
+    title: 'E-commerce Website Demo | Online Store | SS IT Solution',
+    description:
+      'A single-page e-commerce store demo with search, filters, wishlist, cart, coupon codes and checkout — built in React on mock data.',
+    priority: 0.6, changefreq: 'monthly',
+  },
+  {
+    path: '/mobile-app-demo',
+    title: 'Mobile App Demo | Café Order Management App | SS IT Solution',
+    description:
+      'A café order-management mobile app demo: take table orders, track them through the kitchen and see the day’s sales dashboard.',
+    priority: 0.6, changefreq: 'monthly',
+  },
+  {
     path: '/industries',
     title: 'Industries | Manufacturing, Government, Healthcare & More | SS IT Solution',
     description:
