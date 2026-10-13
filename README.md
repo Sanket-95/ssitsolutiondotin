@@ -51,6 +51,22 @@ src/
   App.tsx · main.tsx · entry-server.tsx · AppProviders.tsx · index.css
 ```
 
+## 3D Web SCADA live demo (`/scada-demo/`)
+
+One project, two pages: the website (`/`) and the **3D Web SCADA** demo (`/scada-demo/`,
+source in `scada-demo/`). Both run from the same `npm run dev` and are built together by
+`npm run build` into one `dist/` — no backend, no database (the demo runs on simulated data
+in the browser). Portfolio cards: `demos` in `src/data/portfolio.ts`.
+
+- `scada-demo/` is the public-demo copy of the SCADA app from the separate plant project
+  (`python scada/frontend/src`). It always runs in demo mode (`scada-demo/src/config/demoMode.js`):
+  plant set-up and PLC pages hidden, plant config from sanitized `demoPlant.json` (PLC register
+  addresses blanked, no PLC IP), nothing saved to a server.
+- To update it from the plant project, re-copy `src/` but keep this copy's `config/demoMode.js`,
+  `config/demoPlant.json`, `config/demoHeader.json`, `xlsxUnavailable.js` (and the two Excel
+  modal imports pointing at it); never copy `config/saved*.json`.
+- Dev URLs: http://localhost:5173/ and http://localhost:5173/scada-demo/
+
 ## Deployment
 
 Deploy `dist/` to any static host. Every route has its own `index.html`, and unknown URLs are served `404.html` with a real 404 status, so no SPA rewrite is needed.

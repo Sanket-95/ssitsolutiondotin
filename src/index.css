@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+/* The SCADA demo (scada-demo/) uses its own inline styles — keep its sources out of Tailwind's scan. */
+@source not "../scada-demo";
 
 /* Inter (variable), Latin subset only — self-hosted and preloaded by vite.config.ts. */
 @font-face {

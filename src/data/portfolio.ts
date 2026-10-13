@@ -42,4 +42,38 @@ export const projects: Project[] = [
   },
 ];
 
+/** Sample project demos — hosted on this site (built from separate projects, see scripts/add-demos.mjs). */
+export interface Demo {
+  id: string;
+  title: string;
+  /** Site-relative path of the hosted demo; omitted while the demo is not published yet. */
+  path?: string;
+  category: string;
+  summary: string;
+  highlights: string[];
+  layout: 'scada' | 'chat';
+}
+
+export const demos: Demo[] = [
+  {
+    id: '3d-web-scada',
+    title: '3D Web SCADA',
+    path: '/scada-demo/',
+    category: 'Industrial Automation · Live Demo',
+    summary:
+      'A browser-based SCADA for plant monitoring: live 2D and 3D mimics of a plating line and a dairy plant, alarms, and twelve production reports with CSV and PDF export. Runs on simulated data.',
+    highlights: ['3D Visualization', 'Real-time Monitoring', 'Reports & Analytics'],
+    layout: 'scada',
+  },
+  {
+    id: 'chat-bot',
+    title: 'AI Chat Bot',
+    category: 'Conversational AI · Coming soon',
+    summary:
+      'A conversational assistant that answers customer questions from your own content and hands over to a person when it should.',
+    highlights: ['Natural Language', 'Knowledge Base', 'Website Integration'],
+    layout: 'chat',
+  },
+];
+
 export const hostOf = (url: string) => new URL(url).hostname.replace(/^www\./, '');

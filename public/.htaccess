@@ -16,8 +16,13 @@ DirectorySlash Off
   RewriteRule ^ https://ssitsolution.in%{REQUEST_URI} [L,R=301]
 
   # Drop trailing slashes on page folders: /services/ -> /services
+  # (not for /scada-demo/ — the hosted SCADA demo app lives at that folder URL)
+  RewriteCond %{REQUEST_URI} !^/scada-demo/
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+  # /scada-demo -> /scada-demo/ (the demo's assets are addressed from the folder)
+  RewriteRule ^scada-demo$ /scada-demo/ [L,R=301]
 
   # Serve /services from /services/index.html
   RewriteCond %{REQUEST_FILENAME} -d

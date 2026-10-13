@@ -30,6 +30,8 @@ function seoPlugin(siteUrl: string): Plugin {
       isSsrBuild = !!config.build.ssr;
     },
     transformIndexHtml(html, ctx) {
+      // The SCADA demo page (scada-demo/index.html) has its own fonts and no SEO placeholders.
+      if (ctx.path.startsWith('/scada-demo/')) return html;
       const out = html.replace(/__SITE_URL__/g, siteUrl);
       // Preload the Latin Inter file so text renders in the brand font without a late swap.
       const font = Object.keys(ctx.bundle ?? {}).find((f) => /inter-latin-wght-normal-.*\.woff2$/.test(f));
@@ -97,7 +99,7 @@ function seoPlugin(siteUrl: string): Plugin {
   };
 }
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, root, 'VITE_');
   const siteUrl = (env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, '');
 
@@ -110,6 +112,9 @@ export default defineConfig(({ mode }) => {
       target: 'es2022',
       assetsInlineLimit: 4096,
       rolldownOptions: {
+        // Two pages in one app: the website (/) and the 3D Web SCADA live demo
+        // (/scada-demo/, source in scada-demo/ — a static, simulated-data app).
+        ...(isSsrBuild ? {} : { input: { main: resolve(root, 'index.html'), scada: resolve(root, 'scada-demo/index.html') } }),
         output: {
           // Long-term cacheable vendor chunks.
           codeSplitting: {
