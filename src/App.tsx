@@ -1,6 +1,7 @@
-import { lazy, type ComponentType } from 'react';
+import { lazy, Suspense, type ComponentType } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { PageLoader } from '@/components/layout/PageLoader';
 import Home from '@/pages/Home';
 
 type PageModule = { default: ComponentType };
@@ -16,6 +17,7 @@ const pageLoaders: Record<string, () => Promise<PageModule>> = {
   '/industries': () => import('@/pages/IndustriesPage'),
   '/about': () => import('@/pages/AboutPage'),
   '/contact': () => import('@/pages/ContactPage'),
+  '/planet': () => import('@/games/portfolio-planet/PortfolioPlanet'),
   '/404': () => import('@/pages/NotFound'),
 };
 
@@ -53,6 +55,15 @@ export default function App() {
         <Route path="contact" element={<Page path="/contact" />} />
         <Route path="*" element={<Page path="/404" />} />
       </Route>
+      {/* Full-screen game, outside the site layout. */}
+      <Route
+        path="planet"
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <Page path="/planet" />
+          </Suspense>
+        }
+      />
     </Routes>
   );
 }

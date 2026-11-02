@@ -66,6 +66,13 @@ export const routeMeta: RouteMeta[] = [
     priority: 0.6, changefreq: 'monthly',
   },
   {
+    path: '/planet',
+    title: 'Portfolio Planet | 3D Browser Game | SS IT Solution',
+    description:
+      'A small 3D browser game: walk around a tiny planet, discover monuments to real projects and collect the parts of a crashed spaceship.',
+    priority: 0.5, changefreq: 'monthly',
+  },
+  {
     path: '/industries',
     title: 'Industries | Manufacturing, Government, Healthcare & More | SS IT Solution',
     description:

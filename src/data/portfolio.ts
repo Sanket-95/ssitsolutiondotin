@@ -5,6 +5,7 @@ import scadaPreview from '@/assets/previews/scada.jpg';
 import chatbotPreview from '@/assets/previews/chatbot.jpg';
 import shopPreview from '@/assets/previews/shop.jpg';
 import cafePreview from '@/assets/previews/cafe.jpg';
+import planetPreview from '@/assets/previews/planet.jpg';
 
 export interface Project {
   id: string;
@@ -108,6 +109,17 @@ export const demos: Demo[] = [
       'A café order-management app for staff: take table orders, move them through the kitchen and track the day’s sales on a dashboard.',
     highlights: ['Order Management', 'Kitchen Tracking', 'Sales Dashboard'],
     image: cafePreview,
+  },
+  {
+    id: 'portfolio-planet',
+    title: 'Portfolio Planet',
+    path: '/planet',
+    internal: true,
+    category: '3D Browser Game · Play Now',
+    summary:
+      'A small 3D game: walk around a tiny planet, discover monuments to my projects and collect the five parts of a crashed spaceship to fly home.',
+    highlights: ['Three.js', 'React Three Fiber', 'Desktop & Mobile'],
+    image: planetPreview,
   },
 ];
 
